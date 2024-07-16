@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+/* Resetear márgenes y padding del cuerpo y HTML */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding:10;
+}
+
+/* Hacer que el cuerpo ocupe toda la altura */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Ajustar el padding para separar las secciones */
+.section {
+  height: 100vh; /* Ocupa toda la altura del viewport */
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Definir estilos específicos para cada sección */
+.section1 {
+  background-color: #ffffff; /* Color de fondo para la sección 1 */
+}
+
+.section2 {
+  background-color: #ffffff; /* Color de fondo para la sección 2 */
+  padding: 50px;
+}
+
+.section3 {
+  background-color: #007bff; /* Color de fondo para la sección 3 */
+  padding: 50px;
+}
+
+.section4 {
+  background-color: #007bff; /* Color de fondo para la sección 4 */
+  padding: 50px;
+}
+
+

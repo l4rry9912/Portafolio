@@ -1,0 +1,81 @@
+.service {
+  position: relative;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+  color: white;
+}
+
+.service-content {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  background-color: #007bff; /* Color de fondo ajustado */
+  border-radius: 10px;
+  height: 100%;
+}
+
+h3 {
+
+  border-radius: 10px;
+  font-size: 2rem;
+  padding-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.carousel-item {
+  height: 400px; /* Ajuste la altura del item del carrusel según sea necesario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-inner {
+  height: 450px; /* Ajuste la altura del contenedor interno del carrusel */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.imagen-carrusel {
+  width: auto; /* Ajusta automáticamente el ancho */
+  height: 100%; /* Ocupa toda la altura del Carousel.Item */
+  object-fit: contain; /* Ajusta la imagen para contener completamente el espacio disponible */
+}
+
+
+@media (max-width: 768px) {
+  .service {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .carousel-item{
+    height: 400px; 
+  }
+  .carousel-inner{
+    height: 450px; 
+  } 
+
+  .service-content {
+    height: auto; /* Ajusta la altura automática en dispositivos móviles */
+  }
+}

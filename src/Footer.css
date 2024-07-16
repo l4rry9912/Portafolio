@@ -1,0 +1,111 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.zenitho-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.footer-content {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.contact-info h5,
+.social-links h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff; 
+}
+
+.contact-info ul,
+.social-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li,
+.social-links ul li {
+  margin-bottom: 10px;
+  color: #ccc; 
+}
+
+.contact-info ul li a,
+.social-links ul li a {
+  color: #ccc; 
+  text-decoration: none; 
+}
+
+.social-links ul {
+  display: flex;
+  gap: 10px; 
+}
+
+.social-links a {
+  color: #fff; 
+  font-size: 3rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #83888c; 
+}
+
+.copyright {
+  color: #83888c;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 10px; 
+  right: 20px; 
+}
+
+@media (min-width: 992px) {
+  .footer-content .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-content .col-lg-4:not(:last-child) {
+    border-right: 1px solid #ccc; 
+    padding-right: 20px; 
+  }
+
+  .footer-content .col-lg-4 {
+    margin-bottom: 0; 
+    padding-bottom: 0; 
+  }
+}
+
+@media (max-width: 991.98px) {
+  .footer-content .row {
+    flex-direction: column;
+  }
+  
+  .footer-content .col-lg-4 {
+    margin-bottom: 20px; /* Espacio entre secciones en pantallas pequeñas */
+    padding-bottom: 20px; /* Espacio entre la línea y el contenido */
+  }
+  
+  .footer-content .col-lg-4:not(:last-child) {
+    border-bottom: 1px solid #ccc; /* Línea horizontal entre secciones en pantallas pequeñas */
+  }
+  
+  .footer-content .col-lg-4:nth-child(3) {
+    border-bottom: none; /* Eliminar línea bajo la tercera columna en pantallas pequeñas */
+  }
+  
+  .copyright {
+    text-align: center; /* Centrar texto en pantallas pequeñas */
+  }
+}
