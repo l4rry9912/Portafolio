@@ -14,6 +14,18 @@ const Section1 = () => {
         localStorage.setItem('scrollEnabled', 'true');
     }, []);
 
+    const handleDownloadCV = () => {
+        
+        const cvUrl = '/CV-Larry-rodriguez.pdf'; 
+
+        const link = document.createElement('a');
+        link.href = cvUrl;
+        link.setAttribute('download', 'cv-larry-rodriguez.pdf');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <section className="section1">
             <div className="container">
@@ -28,7 +40,7 @@ const Section1 = () => {
                 <div className="row mt-4">
                     <div className="col text-center botones">
                         <button className="btn btn-info mx-4" onClick={handleScroll}>Ver Proyectos</button>
-                        <button className="btn btn-info mx-4">Descargar CV</button>
+                        <button className="btn btn-info mx-4" onClick={handleDownloadCV}>Descargar CV</button>
                     </div>
                 </div>
             </div>
