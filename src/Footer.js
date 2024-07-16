@@ -25,8 +25,8 @@ const Footer = () => {
               <h5>Redes Sociales</h5>
               <ul className="list-unstyled d-flex justify-content-center">
                 <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/l4rry9912"><FaGithub /></a></li>
-                <li><a target="_blank" rel="noopener noreferrer" href="#"><FaLinkedin /></a></li>
-                <li><a target="_blank" rel="noopener noreferrer" href="#"><FaInstagram /></a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/larry-rodriguez-pati%C3%B1o-800430309/"><FaLinkedin /></a></li>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/larry_rodriguez9/"><FaInstagram /></a></li>
               </ul>
             </div>
           </div>
