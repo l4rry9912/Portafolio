@@ -20,7 +20,7 @@ const Section1 = () => {
 
         const link = document.createElement('a');
         link.href = cvUrl;
-        link.setAttribute('download', 'cv-larry-rodriguez.pdf');
+        link.setAttribute('download', 'CV-Larry-Rodriguez.pdf');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
