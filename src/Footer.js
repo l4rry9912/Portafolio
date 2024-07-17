@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="contact-info">
               <h5>Contacto</h5>
               <ul className="list-unstyled">
-                <li><a href="mailto:L4rry3201@Gmail.com"><FaEnvelope /> L4rry3201@Gmail.com</a></li>
+                <li><a href="mailto:larrysebastianrp@gmail.com"><FaEnvelope /> L4rry3201@Gmail.com</a></li>
                 <li><FaPhone /> +34 638464575</li>
               </ul>
             </div>
@@ -34,7 +34,7 @@ const Footer = () => {
             <button className="btn btn-info" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               Volver Arriba
             </button>
-            <h6 className="copyright">© 2024 Creado por Larry Rodriguez.</h6>
+            <h6 className="copyright">© 2024 Larry Rodriguez</h6>
           </div>
         </div>
       </div>

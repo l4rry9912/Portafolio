@@ -13,10 +13,10 @@ const educationData = [
   },
   {
     institution: 'Universae',
-    degree: 'Grado Superior en Desarrollo Multiplataforma',
+    degree: 'Desarrollo de Aplicaciones Multiplataforma',
     period: '2022 - 2024',
     description:
-      'Actualmente curso el Grado Superior en Desarrollo Multiplataforma en Universae, especializándome en desarrollo de aplicaciones.',
+      'Realice mi grado superior en este centro especializado en formacion profesional.',
   },
 ];
 
@@ -26,7 +26,7 @@ const experienceData = [
     position: 'Prácticas',
     period: '3 meses',
     description:
-      'Realicé prácticas en High Education, donde adquirí experiencia práctica en el desarrollo de software.',
+      'Realicé prácticas en High Education SL, donde adquirí experiencia práctica en el desarrollo de software y web.',
   },
 ];
 
