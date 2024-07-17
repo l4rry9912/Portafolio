@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="contact-info">
               <h5>Contacto</h5>
               <ul className="list-unstyled">
-                <li><a href="mailto:larrysebastianrp@gmail.com"><FaEnvelope /> L4rry3201@Gmail.com</a></li>
+                <li><a href="mailto:larrysebastianrp@gmail.com"><FaEnvelope /> larrysebastianrp@gmail.com</a></li>
                 <li><FaPhone /> +34 638464575</li>
               </ul>
             </div>
