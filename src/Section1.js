@@ -16,11 +16,11 @@ const Section1 = () => {
 
     const handleDownloadCV = () => {
         
-        const cvUrl = '/CV-Larry-rodriguez.pdf'; 
+        const cvUrl = '/CV-Larry-Rodriguez.pdf'; 
 
         const link = document.createElement('a');
         link.href = cvUrl;
-        link.setAttribute('download', 'CV-Larry-Rodriguez.pdf');
+        link.setAttribute('download', 'cv-larry-rodriguez.pdf');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
