@@ -32,6 +32,8 @@
   position: relative;
   z-index: 1;
   color: #000000;
+  display: flex;
+  gap: 1rem;
 
 }
 .visible {
