@@ -32,7 +32,7 @@ const projects = [
 
 function Section2() {
     return (
-        <section className="py-5">
+        <section className="py-5" id="proyectos">
 
             <div className="container">
 

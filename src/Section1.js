@@ -2,28 +2,40 @@ import React, { useCallback, useState } from 'react';
 
 function Section1() {
 
-    const [scrollEnabled, setScrollEnabled] = useState(
-        () => localStorage.getItem('scrollEnabled') === 'true'
-    );
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState('');
 
     const handleScroll = useCallback(() => {
-        document
-            .getElementById('projects-section')
-            .scrollIntoView({ behavior: 'smooth' });
+        const section = document.getElementById('proyectos');
 
-        setScrollEnabled(true);
-        localStorage.setItem('scrollEnabled', 'true');
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
     }, []);
 
     const handleDownloadCV = () => {
-        const cvUrl = '/CV-Larry-Rodriguez.pdf';
 
-        const link = document.createElement('a');
-        link.href = cvUrl;
-        link.setAttribute('download', 'cv-larry-rodriguez.pdf');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        setLoading(true);
+        setMessage('');
+
+        const cvUrl = '/cv-larry-rodriguez.pdf';
+
+        setTimeout(() => {
+
+            const link = document.createElement('a');
+            link.href = cvUrl;
+            link.download = 'cv-larry-rodriguez.pdf';
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            setLoading(false);
+            setMessage('Curriculum descargado');
+
+        }, 800);
+
     };
 
     return (
@@ -34,17 +46,16 @@ function Section1() {
 
                     <div className="col-md-6 mb-4 mb-md-0">
                         <h1 className="display-5">
-                            ¡Hola! Soy Larry Rodríguez, un estudiante de desarrollo
-                            de aplicaciones multiplataforma, en busca de explorar
-                            y aprender en el emocionante mundo de la tecnología.
+                            Soy desarrollador de software y me apasiona el mundo de la tecnología y la programación. Me gusta aprender y experimentar con nuevas herramientas que me permitan construir proyectos funcionales y seguir mejorando mis habilidades técnicas.
                         </h1>
                     </div>
 
                     <div className="col-md-6 text-center">
                         <img
-                            src="img-icon.svg"
+                            src="/fotoLarry.jpeg"
                             alt="Icono descriptivo"
-                            className="img-fluid w-75"
+                            className="img-fluid shadow"
+                            style={{ border: '1px dashed black', borderRadius: '100%', height: '400px', width: '400px', objectFit: 'cover' }}
                         />
                     </div>
 
@@ -63,9 +74,16 @@ function Section1() {
                         <button
                             className="btn btn-outline-primary btn-lg rounded-pill px-4 mx-2"
                             onClick={handleDownloadCV}
+                            disabled={loading}
                         >
-                            Descargar CV
+                            {loading ? "Descargando..." : "Descargar CV"}
                         </button>
+
+                        {message && (
+                            <p className="mt-3 text-success fw-semibold">
+                                {message}
+                            </p>
+                        )}
 
                     </div>
                 </div>
