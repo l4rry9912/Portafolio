@@ -1,31 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Zenitho } from 'uvcanvas';
-import './Header.css'; // Asegúrate de tener estilos adecuados en Header.css
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [visible, setVisible] = useState(true);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
         let lastScrollTop = 0;
+
         const handleScroll = () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             setVisible(scrollTop <= lastScrollTop);
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         };
 
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleResize);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
@@ -34,28 +27,65 @@ function Header() {
     };
 
     return (
-        <header className={`header ${visible ? 'visible' : 'hidden'}`}>
-            <div className="background-header">
-                <Zenitho className="zenitho-background"/>
-            </div>
-            <div className="header-content">
-                <div className="row align-items-center">
-                    <div className="col">
-                        <h1 className="name">Larry Rodriguez</h1>
-                    </div>
-                    <div className="col text-right">
-                        <div className="menu">
-                            {isMobile && (
-                                <FaBars className="btn-menu" onClick={toggleMenu} />
-                            )}
-                            <ul className={`menu-items ${isMobile && menuOpen ? 'open' : ''}`}>
-                                <li><a href="#sobremi">Sobre mí</a></li>
-                                <li><a href="#habilidades">Habilidades</a></li>
-                                <li><a href="#contacto">Contacto</a></li>
-                            </ul>
+        <header
+            className="fixed-top d-flex justify-content-center mt-3"
+            style={{
+                transition: 'top 0.5s ease',
+                top: visible ? '0' : '-200px',
+                zIndex: 1000
+            }}
+        >
+            <div
+                className="position-relative rounded-pill shadow overflow-visible"
+                style={{ width: '70%', height: '70px' }}
+            >
+                <div className="position-absolute top-0 start-0 w-100 h-100 overflow-hidden rounded-pill">
+                    <Zenitho />
+                </div>
+                <div className="container-fluid h-100 position-relative p-1">
+                    <div className="d-flex justify-content-between align-items-center h-100">
+
+                        <div className="p-5">
+                            <h5 className="mb-0 text-center text-dark">
+                                Larry Rodriguez
+                            </h5>
                         </div>
+
+                        <div className="p-5">
+                            <ul className="d-none d-md-flex list-unstyled gap-4 mb-0 ">
+                                <li><a className="text-dark text-decoration-none" href="#sobremi">Sobre mí</a></li>
+                                <li><a className="text-dark text-decoration-none" href="#habilidades">Habilidades</a></li>
+                                <li><a className="text-dark text-decoration-none" href="#contacto">Contacto</a></li>
+                            </ul>
+                            <FaBars
+                                className="d-md-none fs-4 text-dark"
+                                onClick={toggleMenu}
+                                style={{ cursor: 'pointer' }}
+                            />
+                        </div>
+
                     </div>
                 </div>
+
+                {menuOpen && (
+                    <div
+                        className="mt-1 d-md-none position-absolute start-0 w-100 bg-primary text-center py-3 shadow"
+                        style={{ top: '70px', borderRadius: '20px' }}
+                    >
+                        <ul className="list-unstyled mb-0">
+                            <li className="mb-2">
+                                <a className="text-white text-decoration-none" href="#sobremi">Sobre mí</a>
+                            </li>
+                            <li className="mb-2">
+                                <a className="text-white text-decoration-none" href="#habilidades">Habilidades</a>
+                            </li>
+                            <li>
+                                <a className="text-white text-decoration-none" href="#contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                )}
+
             </div>
         </header>
     );
