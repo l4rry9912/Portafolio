@@ -39,13 +39,13 @@ function Section1() {
     };
 
     return (
-        <section className="vh-100 d-flex align-items-center text-center">
+        <section className="vh-100 d-flex align-items-center text-center mt-2">
             <div className="container p-5">
 
                 <div className="row align-items-center">
 
                     <div className="col-md-6 mb-4 mb-md-0">
-                        <h1 className="display-5">
+                        <h1 className="display-6">
                             Soy desarrollador de software y me apasiona el mundo de la tecnología y la programación. Me gusta aprender y experimentar con nuevas herramientas que me permitan construir proyectos funcionales y seguir mejorando mis habilidades técnicas.
                         </h1>
                     </div>
