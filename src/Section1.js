@@ -11,7 +11,6 @@ function Section1() {
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
         }
-
     }, []);
 
     const handleDownloadCV = () => {
@@ -39,40 +38,52 @@ function Section1() {
     };
 
     return (
-        <section className="vh-100 d-flex align-items-center text-center mt-2">
-            <div className="container p-5">
+        <section className="min-vh-100 d-flex align-items-center text-center mt-2">
+
+            <div className="container py-5">
 
                 <div className="row align-items-center">
 
                     <div className="col-md-6 mb-4 mb-md-0">
+
                         <h1 className="display-6">
-                            Soy desarrollador de software y me apasiona el mundo de la tecnología y la programación. Me gusta aprender y experimentar con nuevas herramientas que me permitan construir proyectos funcionales y seguir mejorando mis habilidades técnicas.
+                            Soy desarrollador de software y me apasiona el mundo de la tecnología y la programación. 
+                            Me gusta aprender y experimentar con nuevas herramientas que me permitan construir 
+                            proyectos funcionales y seguir mejorando mis habilidades técnicas.
                         </h1>
+
                     </div>
 
                     <div className="col-md-6 text-center">
+
                         <img
                             src="/fotoLarry.jpeg"
-                            alt="Icono descriptivo"
-                            className="img-fluid shadow"
-                            style={{ border: '1px dashed black', borderRadius: '100%', height: '400px', width: '400px', objectFit: 'cover' }}
+                            alt="Foto Larry"
+                            className="img-fluid rounded-circle shadow border border-dark"
+                            style={{
+                                maxWidth: "400px",
+                                width: "100%",
+                                objectFit: "cover"
+                            }}
                         />
+
                     </div>
 
                 </div>
 
-                <div className="row mt-4">
-                    <div className="col text-center">
+                <div className="row mt-5">
+
+                    <div className="col text-center d-grid gap-2 d-md-block">
 
                         <button
-                            className="btn btn-primary btn-lg rounded-pill px-4 mx-2"
+                            className="btn btn-primary btn-lg rounded-pill px-4 mx-md-2"
                             onClick={handleScroll}
                         >
                             Ver Proyectos
                         </button>
 
                         <button
-                            className="btn btn-outline-primary btn-lg rounded-pill px-4 mx-2"
+                            className="btn btn-outline-primary btn-lg rounded-pill px-4 mx-md-2"
                             onClick={handleDownloadCV}
                             disabled={loading}
                         >
@@ -86,9 +97,11 @@ function Section1() {
                         )}
 
                     </div>
+
                 </div>
 
             </div>
+
         </section>
     );
 }
